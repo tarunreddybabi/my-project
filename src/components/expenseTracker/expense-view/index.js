@@ -11,7 +11,7 @@ const ExpenseView = ({ type, data }) => {
       p="5"
       pb="4"
       border="1px solid"
-      borderColor="gray.100"
+      borderColor="gray.400"
       borderRadius="12"
     >
       <Flex justifyContent="space-between" alignItems="center">
@@ -26,12 +26,12 @@ const ExpenseView = ({ type, data }) => {
           justifyContent="space-between"
           alignItems="center"
           border="1px solid"
-          borderColor={type === "expense" ? "red.100" : "blue.100"}
+          borderColor={type === "expense" ? "red.400" : "blue.400"}
           p="4"
           borderRadius="8"
         >
           <Flex alignItems="center" justifyContent="center">
-            <Text ml="3" fontWeight="bold" color="gray.600">
+            <Text ml="3" fontWeight="bold" color="black.600">
               {item.description}
             </Text>
           </Flex>

@@ -7,7 +7,7 @@ const Summary = ({onClose,isOpen, totalExpense,totalIncome}) => {
     <Box
       p="6"
       border={"1px solid"}
-      borderColor={"gray.100"}
+      borderColor={"gray.400"}
       overflow={"hidden"}
       borderRadius={"10"}
       background={"white"}

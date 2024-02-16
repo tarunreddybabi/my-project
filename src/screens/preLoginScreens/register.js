@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './register.css'; 
+
 
 const RegisterForm = () => {
   const usernameRef = useRef(null);
@@ -23,22 +23,66 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="register-container">
-      <h2>Register Page</h2>
-      <form onSubmit={handleRegister}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input type="text" id="username" ref={usernameRef} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" ref={passwordRef} required />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      <p>Already have an account? <Link to="/">Login here</Link></p>
-    </div>
-  );
+    <div style={styles.registerContainer}>
+    <h2 style={styles.header}>Register Page</h2>
+    <form onSubmit={handleRegister} style={styles.form}>
+      <div style={styles.formGroup}>
+        <label htmlFor="username" style={styles.label}>Username:</label>
+        <input type="text" id="username" ref={usernameRef} style={styles.input} required />
+      </div>
+      <div style={styles.formGroup}>
+        <label htmlFor="password" style={styles.label}>Password:</label>
+        <input type="password" id="password" ref={passwordRef} style={styles.input} required />
+      </div>
+      <button type="submit" style={styles.button}>Register</button>
+    </form><br/>
+    <p style={styles.loginLink}>Already have an account?<br/> <Link to="/"><b>Login here</b></Link></p>
+  </div>
+);
+};
+
+const styles = {
+registerContainer: {
+  maxWidth: '400px',
+  height:'400px',
+  margin: '0 auto',
+  padding: '20px',
+  border: '1px solid #ccc',
+  borderRadius: '5px',
+  backgroundColor: '#bde0fe',
+},
+header: {
+  marginBottom: '20px',
+  textAlign: 'center',
+  fontWeight:'bolder',
+  fontSize:'26px',
+},
+formGroup: {
+  marginBottom: '15px',
+},
+label: {
+  display: 'block',
+  marginBottom: '5px',
+  fontWeight:'bold'
+},
+input: {
+  width: '100%',
+  padding: '8px',
+  border: '1px solid #ccc',
+  borderRadius: '3px',
+},
+button: {
+  width: '100%',
+  padding: '10px',
+  backgroundColor: '#28a745',
+  color: '#fff',
+  border: 'none',
+  borderRadius: '3px',
+  cursor: 'pointer',
+},
+loginLink:{
+  textAlign:'center',
+}
 };
 
 export default RegisterForm;

@@ -10,11 +10,12 @@ const NavBar = () => {
 
   const listStyle = {
     margin: 5,
+    textAlign:"center",
     display: "inline-block",
     fontWeight: "bold"
   };
   const navStyle = {
-    
+    textAlign:"center",
     backgroundColor:  "#007bff",
     padding: "10px 20px",
     borderBottom: "2px solid #0056b3",
@@ -30,18 +31,8 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="nav-item" style={listStyle}>
-            <Link to="/setting" style={link}>
-              Settings
-            </Link>
-          </li>
-          <li className="nav-item" style={listStyle}>
             <Link to="/about" style={link}>
               About
-            </Link>
-          </li>
-          <li className="nav-item" style={listStyle}>
-            <Link to="/products" style={link}>
-              Products
             </Link>
           </li>
         </ul>

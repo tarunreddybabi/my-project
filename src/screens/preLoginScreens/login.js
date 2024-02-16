@@ -24,23 +24,73 @@ const LoginScreen = ({ setLoggedIn }) => {
   };
 
   return (
-    <div>
-      <h2 className='header'>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input type="text" id="username" ref={usernameRef} required />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" ref={passwordRef} required />
-        </div>
-        {error && <div className="error">{error}</div>}
-        <button type="submit">Login</button>
-      </form>
-      <p>Don't have an account? <br/> <Link to="/register">Register here</Link></p>
-    </div>
-  );
+    <div style={styles.container}>
+    <h2 style={styles.header}>Login</h2>
+    <form onSubmit={handleLogin} style={styles.form}>
+      <div style={styles.formGroup}>
+        <label htmlFor="username" style={styles.label}>Username:</label>
+        <input type="text" id="username" ref={usernameRef} style={styles.input} required />
+      </div>
+      <div style={styles.formGroup}>
+        <label htmlFor="password" style={styles.label}>Password:</label>
+        <input type="password" id="password" ref={passwordRef} style={styles.input} required />
+      </div>
+      {error && <div className="error" style={styles.error}>{error}</div>}
+      <button type="submit" style={styles.button}>Login</button>
+    </form>
+    <p style={styles.registerLink}>Don't have an account? <br /> <Link to="/register"><b>Register here</b></Link></p>
+  </div>
+);
+};
+const styles = {
+  container: {
+    maxWidth: '400px',
+    height:'400px',
+    margin: '0 auto',
+    padding: '20px',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    backgroundColor: '#ffd7ba',
+  },
+  header: {
+    marginBottom: '20px',
+    textAlign: 'center',
+    fontWeight:'bolder',
+    fontSize:'26px',
+  },
+  form: {
+    marginBottom: '15px',
+  },
+  formGroup: {
+    marginBottom: '15px',
+  },
+  label: {
+    display: 'block',
+    marginBottom: '5px',
+    fontWeight:'bold'
+  },
+  input: {
+    width: '100%',
+    padding: '8px',
+    border: '1px solid #ccc',
+    borderRadius: '3px',
+  },
+  button: {
+    width: '100%',
+    padding: '10px',
+    backgroundColor: '#28a745',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '3px',
+    cursor: 'pointer',
+  },
+  error: {
+    color: 'red',
+    marginBottom: '10px',
+  },
+  registerLink: {
+    textAlign: 'center',
+  },
 };
 
 export default LoginScreen;
