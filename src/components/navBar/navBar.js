@@ -30,11 +30,6 @@ const NavBar = () => {
               Home
             </Link>
           </li>
-          <li className="nav-item" style={listStyle}>
-            <Link to="/about" style={link}>
-              About
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>
