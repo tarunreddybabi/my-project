@@ -16,7 +16,7 @@ const ExpenseView = ({ type, data }) => {
       backgroundColor={"blue.300"}
     >
       <Flex justifyContent="space-between" alignItems="center">
-        <Heading size="md" color="red.700">
+        <Heading size="md" color="red.700" fontFamily={"cursive"}>
           {type === "income" ? "Income" : "Expense"}
         </Heading>
       </Flex>

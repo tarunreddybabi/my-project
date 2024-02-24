@@ -78,7 +78,7 @@ const RegisterForm = () => {
 const styles = {
   registerContainer: {
     maxWidth: '400px',
-    margin: '0 auto',
+    margin: "30px auto 0", 
     padding: '20px',
     border: '1px solid #ccc',
     borderRadius: '5px',

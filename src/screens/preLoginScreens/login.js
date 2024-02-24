@@ -27,7 +27,7 @@ const LoginScreen = ({ setLoggedIn }) => {
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} >
       <h2 style={styles.header}>Login</h2>
       <form onSubmit={handleLogin} style={styles.form}>
         <div style={styles.formGroup}>
@@ -77,7 +77,7 @@ const styles = {
   container: {
     maxWidth: "400px",
     height: "400px",
-    margin: "0 auto",
+    margin: "30px auto 0", 
     padding: "20px",
     border: "1px solid #ccc",
     borderRadius: "5px",

@@ -5,7 +5,7 @@ import LoginScreen from "../screens/preLoginScreens/login";
 export const DataShare = createContext();
 
 const NavigationStack = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <DataShare.Provider value={{ loggedIn, setLoggedIn }}>

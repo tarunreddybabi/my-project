@@ -17,6 +17,7 @@ const Summary = ({ onClose, isOpen, totalExpense, totalIncome }) => {
         w={"full"}
         justifyContent={"center"}
         alignItems={"center"}
+        ml={"20"}
         flexDirection={{
           base: "column",
           sm: "column",
@@ -45,6 +46,7 @@ const Summary = ({ onClose, isOpen, totalExpense, totalIncome }) => {
             height={"100px"}
             border={"1px solid"}
             borderColor={"gray.100"}
+            
           >
             <Flex flexDirection={"column"}>
               <Heading color={"gray.700"}>₹ {totalIncome}</Heading>

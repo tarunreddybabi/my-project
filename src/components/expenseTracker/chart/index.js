@@ -44,16 +44,24 @@ const options = {
   },
 };
 
-const TransactionChartSummary = ({ expense = 100, income = 100 }) => {
+const TransactionChartSummary = ({ expense = 0, income = 0 }) => {
+  const hasData = expense !== 0 || income !== 0;
+
   return (
     <>
-      <Chart
-        options={options}
-        series={[income, expense]}
-        type="pie"
-        width={"150%"}
-        height={"150%"}
-      />
+      {hasData ? (
+        <Chart
+          options={options}
+          series={[income, expense]}
+          type="pie"
+          width={"150%"}
+          height={"150%"}
+        />
+      ) : (
+        <div style={{ backgroundColor: "blue", width: "100%", height: "100%" }}>
+          
+        </div>
+      )}
     </>
   );
 };
