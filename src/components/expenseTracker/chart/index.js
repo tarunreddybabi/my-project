@@ -1,64 +1,61 @@
-
-import Chart from "react-apexcharts"
+import Chart from "react-apexcharts";
 
 const options = {
-    labels: ["Income", "Expense"],
-    colors: ["#213ebf","#FD5E53"],
-    chart: {
-      width: "100px",
-    },
-    states: {
-      hover: {
-        filter: {
-          type: "none",
-        },
+  labels: ["Income", "Expense"],
+  colors: ["#213ebf", "#FD5E53"],
+  chart: {
+    width: "100px",
+  },
+  states: {
+    hover: {
+      filter: {
+        type: "none",
       },
     },
-    legend: {
-      show: false,
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    hover: { mode: null },
-    plotOptions: {
+  },
+  legend: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  hover: { mode: null },
+  plotOptions: {
+    donut: {
+      expandOnClick: false,
       donut: {
-        expandOnClick: false,
-        donut: {
-          labels: {
-            show: false,
-          },
+        labels: {
+          show: false,
         },
       },
     },
-    fill: {
-      colors: ["#213ebf","#FD5E53"],
+  },
+  fill: {
+    colors: ["#213ebf", "#FD5E53"],
+  },
+  tooltip: {
+    enabled: true,
+    theme: "dark",
+    style: {
+      fontSize: "12px",
+      fontFamily: undefined,
+      backgroundColor: "#000000",
     },
-    tooltip: {
-      enabled: true,
-      theme: "dark",
-      style: {
-        fontSize: "12px",
-        fontFamily: undefined,
-        backgroundColor: "#000000",
-      },
-    },
-  };
-  
+  },
+};
 
-const TransactionChartSummary=({expense = 100, income = 100})=>{
-    return(
-        <>
-                <Chart
-                 options={options}
-                 series={[income, expense]}
-                 type="pie"
-                 width={"150%"}
-                 height={"150%"}
-                />
-        </>
+const TransactionChartSummary = ({ expense = 100, income = 100 }) => {
+  return (
+    <>
+      <Chart
+        options={options}
+        series={[income, expense]}
+        type="pie"
+        width={"150%"}
+        height={"150%"}
+      />
+    </>
+  );
+};
 
-    )
-}
-
-export default TransactionChartSummary
+export default TransactionChartSummary;

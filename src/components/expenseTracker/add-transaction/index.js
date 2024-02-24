@@ -17,7 +17,8 @@ import { useContext } from "react";
 import { GlobalContext } from "../../../context";
 
 const TransactionForm = ({ onClose, isOpen }) => {
-  const { formData, setFormData, value, setValue,handleFormSubmit } = useContext(GlobalContext);
+  const { formData, setFormData, value, setValue, handleFormSubmit } =
+    useContext(GlobalContext);
 
   const handleFormChange = (event) => {
     setFormData({
@@ -26,10 +27,10 @@ const TransactionForm = ({ onClose, isOpen }) => {
     });
   };
 
-  const handleSubmit=(event)=>{
-    event.preventDefault()
-    handleFormSubmit(formData)
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleFormSubmit(formData);
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>

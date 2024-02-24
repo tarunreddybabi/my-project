@@ -64,10 +64,9 @@ const Main = () => {
           data={allTransactions.filter((item) => item.type === "expense")}
           type={"expense"}
         />
-        
       </Flex>
     </Flex>
   );
-}
+};
 
 export default Main;

@@ -9,9 +9,7 @@ const NavigationStack = () => {
 
   return (
     <DataShare.Provider value={{ loggedIn, setLoggedIn }}>
-     
-        {loggedIn ? <PostLogin /> : <LoginScreen setLoggedIn={setLoggedIn} />}
-      
+      {loggedIn ? <PostLogin /> : <LoginScreen setLoggedIn={setLoggedIn} />}
     </DataShare.Provider>
   );
 };
