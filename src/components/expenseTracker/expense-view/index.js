@@ -13,6 +13,7 @@ const ExpenseView = ({ type, data }) => {
       border="1px solid"
       borderColor="gray.400"
       borderRadius="12"
+      backgroundColor={"blue.300"}
     >
       <Flex justifyContent="space-between" alignItems="center">
         <Heading size="md" color="red.700">
@@ -35,7 +36,7 @@ const ExpenseView = ({ type, data }) => {
               {item.description}
             </Text>
           </Flex>
-          <Text>$ {item.amount}</Text>
+          <Text> ₹ {item.amount}</Text>
         </Flex>
       ))}
     </Box>

@@ -16,7 +16,7 @@ const NavBar = () => {
   };
   const navStyle = {
     textAlign:"center",
-    backgroundColor:  "#007bff",
+    backgroundColor:  "#47B5FF",
     padding: "10px 20px",
     borderBottom: "2px solid #0056b3",
   };

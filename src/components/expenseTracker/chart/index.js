@@ -5,7 +5,7 @@ const options = {
     labels: ["Income", "Expense"],
     colors: ["#213ebf","#FD5E53"],
     chart: {
-      width: "50px",
+      width: "100px",
     },
     states: {
       hover: {
@@ -53,8 +53,8 @@ const TransactionChartSummary=({expense = 100, income = 100})=>{
                  options={options}
                  series={[income, expense]}
                  type="pie"
-                 width={"100%"}
-                 height={"100%"}
+                 width={"150%"}
+                 height={"150%"}
                 />
         </>
 

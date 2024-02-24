@@ -10,7 +10,7 @@ const Summary = ({onClose,isOpen, totalExpense,totalIncome}) => {
       borderColor={"gray.400"}
       overflow={"hidden"}
       borderRadius={"10"}
-      background={"white"}
+      background={"blue.200"}
       display={"flex"}
     >
       <Flex
@@ -35,11 +35,11 @@ const Summary = ({onClose,isOpen, totalExpense,totalIncome}) => {
           mr={"2"}
         >
             <Heading size={"md"} mb={"4"} color={"gray.600"}>
-                Balance is $ {totalIncome-totalExpense}
+                Balance is ₹ {totalIncome-totalExpense}
             </Heading>
             <Flex justifyContent={"space-evenly"} alignItems={"center"} bg={"gray.50"} w={"full"} height={"100px"} border={"1px solid"} borderColor={"gray.100"}>
               <Flex flexDirection={"column"}>
-                <Heading color={"gray.700"}>$ {totalIncome}</Heading> 
+                <Heading color={"gray.700"}>₹ {totalIncome}</Heading> 
                 <Text color={"gray.600"}>Total Income</Text>
 
               </Flex>
@@ -48,7 +48,7 @@ const Summary = ({onClose,isOpen, totalExpense,totalIncome}) => {
 
             <Flex justifyContent={"space-evenly"} alignItems={"center"} bg={"gray.50"} w={"full"} height={"100px"} border={"1px solid"} borderColor={"gray.100"}>
               <Flex flexDirection={"column"}>
-                <Heading color={"gray.700"}>$ {totalExpense}</Heading> 
+                <Heading color={"gray.700"}>₹ {totalExpense}</Heading> 
                 <Text color={"gray.600"}>Total Expense</Text>
 
               </Flex>

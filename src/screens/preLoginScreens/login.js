@@ -1,21 +1,25 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom'; 
-
+import { Link } from 'react-router-dom';
 
 const LoginScreen = ({ setLoggedIn }) => {
   const [error, setError] = useState('');
-  const usernameRef = useRef(null);
+  const userInputRef = useRef(null); // Ref for username or email input
   const passwordRef = useRef(null);
 
   const handleLogin = (event) => {
     event.preventDefault();
 
-    const username = usernameRef.current.value;
+    const userInput = userInputRef.current.value; // Retrieve the value of the username or email input
     const password = passwordRef.current.value;
 
     const userData = JSON.parse(localStorage.getItem('userData'));
 
-    if (userData && userData.username === username && userData.password === password) {
+    // Check if the userInput matches either username or email in userData
+    if (
+      userData &&
+      ((userData.username === userInput || userData.email === userInput) &&
+        userData.password === password)
+    ) {
       setLoggedIn(true);
       setError('');
     } else {
@@ -25,27 +29,51 @@ const LoginScreen = ({ setLoggedIn }) => {
 
   return (
     <div style={styles.container}>
-    <h2 style={styles.header}>Login</h2>
-    <form onSubmit={handleLogin} style={styles.form}>
-      <div style={styles.formGroup}>
-        <label htmlFor="username" style={styles.label}>Username:</label>
-        <input type="text" id="username" ref={usernameRef} style={styles.input} required />
-      </div>
-      <div style={styles.formGroup}>
-        <label htmlFor="password" style={styles.label}>Password:</label>
-        <input type="password" id="password" ref={passwordRef} style={styles.input} required />
-      </div>
-      {error && <div className="error" style={styles.error}>{error}</div>}
-      <button type="submit" style={styles.button}>Login</button>
-    </form>
-    <p style={styles.registerLink}>Don't have an account? <br /> <Link to="/register"><b>Register here</b></Link></p>
-  </div>
-);
+      <h2 style={styles.header}>Login</h2>
+      <form onSubmit={handleLogin} style={styles.form}>
+        <div style={styles.formGroup}>
+          <label htmlFor="userInput" style={styles.label}>
+            Username or Email:
+          </label>
+          <input
+            type="text"
+            id="userInput"
+            ref={userInputRef}
+            style={styles.input}
+            required
+          />
+        </div>
+        <div style={styles.formGroup}>
+          <label htmlFor="password" style={styles.label}>
+            Password:
+          </label>
+          <input
+            type="password"
+            id="password"
+            ref={passwordRef}
+            style={styles.input}
+            required
+          />
+        </div>
+        {error && <div className="error" style={styles.error}>{error}</div>}
+        <button type="submit" style={styles.button}>
+          Login
+        </button>
+      </form>
+      <p style={styles.registerLink}>
+        Don't have an account? <br />{' '}
+        <Link to="/register">
+          <b>Register here</b>
+        </Link>
+      </p>
+    </div>
+  );
 };
+
 const styles = {
   container: {
     maxWidth: '400px',
-    height:'400px',
+    height: '400px',
     margin: '0 auto',
     padding: '20px',
     border: '1px solid #ccc',
@@ -55,8 +83,8 @@ const styles = {
   header: {
     marginBottom: '20px',
     textAlign: 'center',
-    fontWeight:'bolder',
-    fontSize:'26px',
+    fontWeight: 'bolder',
+    fontSize: '26px',
   },
   form: {
     marginBottom: '15px',
@@ -67,7 +95,7 @@ const styles = {
   label: {
     display: 'block',
     marginBottom: '5px',
-    fontWeight:'bold'
+    fontWeight: 'bold',
   },
   input: {
     width: '100%',
